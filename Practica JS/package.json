@@ -1,0 +1,14 @@
+{
+  "name": "practica-js",
+  "version": "1.0.0",
+  "description": "Practicando JS",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Gleen Montiel",
+  "license": "ISC"
+}

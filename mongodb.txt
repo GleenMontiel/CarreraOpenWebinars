@@ -1,0 +1,94 @@
+
+
+Crear / usar base datos:
+
+use universidad
+
+Insertar dato: 
+
+db.personas.insertOne({
+    "nombre": "María",
+    "apellidos": "Suárez Manrique",
+    "especialidad": [
+        "biología"
+    ],
+    "esTitular": true,
+    "esAsociado": false,
+    "edad": 51
+});
+
+Insertar datos:
+
+db.collectionName.insertMany([
+    {
+    "nombre": "Pilar",
+    "apellidos": "Suárez Manrique",
+    "especialidad": [
+        "química"
+    ],
+    "esTitular": true,
+    "esAsociado": false,
+    "edad": 46
+    },
+    {
+    "nombre": "Manuel",
+    "apellidos": "Lopéz Manrique",
+    "especialidad": [
+        "física"
+    ],
+    "esTitular": true,
+    "esAsociado": true,
+    "edad": 52
+    }    
+]);
+
+Visualizar documento:
+
+db.personas.find().pretty();
+
+--------------- Eliminar -----------------
+
+Eliminar solo el primer registro que coincida
+db.personas.deleteOne({ esTitular: true});
+
+Sin condición eliminará todos los datos de la colección
+db.personas.deleteMany({});
+
+--------------- Actualizar ---------------
+
+Según la referencia "nombre", actualiza los datos dentro del set
+db.personas.updateOne(
+ {
+     nombre: "Pilar"
+ },
+ {
+     $set: {
+         esTitular: false,
+         esAsociado: true
+     }
+ });
+
+ -------------- Consultas  -------------- 
+
+
+db.personas.find({"nombre":"Pilar"}).pretty();
+
+filtrar usando varios parametros y operadores 
+muestra personas mayores de 50 años
+db.personas.find(
+     {
+         esTitular:true,
+         edad:{$gt: 50}
+}).pretty();
+
+Muestra personas mayores de 50 y menores de 60
+db.personas.find(
+    { edad:{$gt: 50,$lt: 60}
+}).pretty();
+
+Muestra la catidad de documentos en la colección
+db.personas.count();
+
+Muestra la catidad de documentos en la colección según los filtros aplicados
+db.personas.find({esAsociado: true}).count();
+

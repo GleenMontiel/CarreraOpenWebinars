@@ -1,0 +1,72 @@
+
+Inicio repositorio: 
+	git init
+
+Creo archivo readme.md:
+	echo "# primera linea de un fichero readme.md" > readme.md
+
+Paso readme.md a staged:
+	git add readme.md
+	
+Primer commit:
+	git commit -m "Mensaje de mi primer commit"
+	
+Creo 4 ficheros temp:
+	echo "fichero 1" > ficch1.tmp
+	echo "fichero 1" > ficch2.tmp
+	echo "fichero 1" > ficch3.tmp
+	echo "fichero 1" > ficch4.tmp
+
+Creo .gitignore y añado la extension .tmp:
+	nano .gitignore
+
+Paso .gitignore a staged:
+	git add .gitignore
+	
+Segundo commit:
+	git commit -m "revision 2 con el .gitignore"
+	
+Creo un segundo archivo readme:
+	echo "creo otro archivo r¡markdown" > readme2.md
+
+Añado todo lo que esta pendiente a staged:
+	git add .
+
+Tercer commit:
+	git commit -m "revision 3"
+	
+Muestro el historico de commits con un formato "bonito".
+	git log --pretty=format:"%h %an %ar - %s"
+
+Reviso informacion del commit por id 
+	git show 2ced21a
+
+git rm readme2.md
+
+Copia archivos del ultimo commit al staged y al working directory
+	git checkout HEAD -- .
+	
+git reset HEAD readme2.md
+echo "ultima linea" >> readme2.md
+git commit -m "ultima linea a readme"
+git add .
+git reset --hard HEAD~1
+
+----------
+
+Inicio repositorio nuevo y descargo https://github.com/sharkdp/bat
+
+git init
+git remote add origin https://github.com/sharkdp/bat
+git fetch origin
+git branch -v -a
+git pull origin master
+
+---------
+
+
+
+
+
+
+
