@@ -48,3 +48,6 @@ En este curso he repasado HTML y CSS.
 - Modelo Schemaless.
 - Consultas.
 - Índices.
+
+### PD: 
+- Al profesor de los cursos de "Vue.js", "Desarrollo con Express y Vue", "Node.js y Express". No le logro entender nada... Lo que medio hice fue con otros tutoriales.
